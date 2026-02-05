@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Super Bowl Predictor Dark Theme */
+    --background: 230 67% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 230 50% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 230 50% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 51 100% 50%;
+    --primary-foreground: 230 67% 5%;
+
+    --secondary: 217 32.6% 17.5%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 32.6% 17.5%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 51 100% 50%;
+    --accent-foreground: 230 67% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
+    --ring: 51 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Team Colors - Seahawks */
+    --seahawks-primary: 93 65% 45%;
+    --seahawks-secondary: 214 100% 13%;
+    
+    /* Team Colors - Patriots */
+    --patriots-primary: 355 88% 41%;
+    --patriots-secondary: 214 100% 13%;
+    --patriots-accent: 210 7% 71%;
+
+    /* Gold accent */
+    --gold: 51 100% 50%;
+    --gold-dark: 35 100% 50%;
+
+    /* Glass effect */
+    --glass: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 20px hsl(51 100% 50% / 0.5), 0 0 40px hsl(51 100% 50% / 0.3);
+  }
+
+  .glow-seahawks {
+    box-shadow: 0 0 40px hsl(93 65% 45% / 0.4), 0 0 80px hsl(214 100% 13% / 0.3);
+  }
+
+  .glow-patriots {
+    box-shadow: 0 0 40px hsl(355 88% 41% / 0.4), 0 0 80px hsl(214 100% 13% / 0.3);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(35 100% 50%) 100%);
+  }
+}
+
+/* Animated background orbs */
+@keyframes float-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-orb {
+  animation: float-orb 20s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
