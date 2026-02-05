@@ -1,0 +1,9 @@
+nfl_data_py
+scikit-learn
+pandas
+numpy
+fastapi
+uvicorn[standard]
+matplotlib
+seaborn
+joblib
